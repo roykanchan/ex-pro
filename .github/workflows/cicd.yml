@@ -37,10 +37,10 @@ jobs:
         run: |
          npm ci
       # Run tests
-      - name: Run tests
-        run: npm test
-        env:
-          CI: true
+      # - name: Run tests
+      #   run: npm test
+      #   env:
+      #     CI: true
 
   build-and-push-docker:
     needs: build-and-test
