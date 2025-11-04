@@ -115,7 +115,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v2
         run: |
-             az login --service-principal -u e7f5b9ea-ce9f-4085-8c16-7bcce6efff00 -p 9n68Q~szB2MG9uWo0KXi6MgjJDaGf5DcX1r5Gb4X --tenant f175b93b-a8d7-4857-87d9-230ad66665be
+             az login --service-principal -u e7f5b9ea-ce9f-4085-8c16-7bcce6efff00 -p ${{secrets.SECRET_VALUE}} --tenant f175b93b-a8d7-4857-87d9-230ad66665be
 
         # with:
         #   creds: ${{ secrets.AZURE_CREDENTIALS }}
