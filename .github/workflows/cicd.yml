@@ -115,7 +115,7 @@ jobs:
       - name: Azure Login
         # uses: azure/login@v2
         run: |
-             az login --service-principal -u e7f5b9ea-ce9f-4085-8c16-7bcce6efff00 -p ${{secrets.SECRET_VALUE}} --tenant f175b93b-a8d7-4857-87d9-230ad66665be
+             az login --service-principal -u 27ede1c6-6852-4b1b-b8da-5a83d7b434d6 -p ${{secrets.SECRET_VALUE}} --tenant 30fe8ff1-adc6-444d-ba94-1238894df42c
 
         # with:
         #   creds: ${{ secrets.AZURE_CREDENTIALS }}
@@ -124,7 +124,7 @@ jobs:
         run: |
                  mkdir .kube/
                  touch .kube/config
-                 az aks get-credentials --resource-group azure_testing --name backend
+                 az aks get-credentials --resource-group kml_rg_main-25beacfa3e5047fe --name kodekloud-demo
           
         # uses: azure/aks-set-context@v4
         # with:
