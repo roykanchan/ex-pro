@@ -9,6 +9,11 @@ spec:
   selector:
     matchLabels:
       app: nodejs-app
+  strategy:
+    type: RollingUpdate  # Use RollingUpdate strategy
+    rollingUpdate:
+      maxSurge: 1           # Max pods that can be created over the desired number during the update
+      maxUnavailable: 1    
 
   template:
     metadata:
