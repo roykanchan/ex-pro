@@ -150,4 +150,4 @@ jobs:
       # Verify deployment
       - name: Verify deployment
         run: |
-          kubectl rollout status deployment/node-backend -n default --timeout=300s
+          kubectl rollout status deployment/nodejs-app -n default --timeout=300s
