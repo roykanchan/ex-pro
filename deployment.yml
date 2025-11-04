@@ -27,8 +27,11 @@ spec:
           ports:
             - containerPort: 3000
           env:
-            - name: NODE_ENV
-              value: "production"
+           - name: DB_HOST
+             value: "my-sql-db-devops.database.windows.net"
+           - name: DB_PORT
+             value: "1433"
+
           resources:
             requests:
               cpu: "100m"
