@@ -131,17 +131,21 @@ jobs:
         #   resource-group: ${{ secrets.AKS_RESOURCE_GROUP }}
         #   cluster-name: ${{ secrets.AKS_CLUSTER_NAME }}
 
-      - name: Deploy to AKS
-        uses: azure/k8s-deploy@v5
-        with:
-          namespace: default
-          manifests: |
-            deployment.yml
-            service.yml
-            ingress.yml
-          images: |
-            ${{ secrets.DOCKER_USERNAME }}/node-backend:${{ github.sha }}
-          strategy: apply
+      - name: Deploy to AKS 
+        run: |
+                 kubectl apply -f deployment.yml
+                 kubectl apply -f service.yml
+                 kubectl apply -f ingress.yml
+        # uses: azure/k8s-deploy@v5
+        # with:
+        #   namespace: default
+        #   manifests: |
+        #     deployment.yml
+        #     service.yml
+        #     ingress.yml
+        #   images: |
+        #     ${{ secrets.DOCKER_USERNAME }}/node-backend:${{ github.sha }}
+        #   strategy: apply
 
       # Verify deployment
       - name: Verify deployment
